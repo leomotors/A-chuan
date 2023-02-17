@@ -44,5 +44,5 @@
     {/each}
   </div>
 {:else}
-  <p>Adios</p>
+  <a href="/course?courseId=2110221">COMP ENG ESS</a>
 {/if}
