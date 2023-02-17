@@ -9,7 +9,11 @@ const config = {
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["svelte3", "@typescript-eslint/eslint-plugin"],
+  plugins: [
+    "svelte3",
+    "@typescript-eslint/eslint-plugin",
+    "simple-import-sort",
+  ],
   overrides: [
     {
       files: ["*.svelte"],
@@ -24,6 +28,8 @@ const config = {
   ],
   rules: {
     "prettier/prettier": "warn",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
     eqeqeq: "warn",
   },
   settings: {

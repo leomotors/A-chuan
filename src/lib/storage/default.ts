@@ -1,4 +1,4 @@
-import type { LocalStorageData, Course } from "../@types";
+import type { Course, LocalStorageData } from "../@types";
 
 export const CompEngEss = {
   name: "COMP ENG ESS",
@@ -18,7 +18,7 @@ export const CompEngEss = {
       name: "Preparation / Pre-test",
       fullScore: 10,
       children: [
-        ...new Array(12).map((_, i) => ({
+        ...new Array(12).fill(undefined).map((_, i) => ({
           name: `Pre-test Activity ${i + 1}`,
           fullScore: 10,
         })),

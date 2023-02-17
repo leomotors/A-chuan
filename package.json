@@ -8,9 +8,9 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "test:unit": "vitest",
+    "test": "vitest --run",
     "lint": "eslint src",
-    "format": "eslint src --fix && prettier --write src/**/*.{html,scss}"
+    "format": "eslint src --fix && prettier --write src/**/*.{svelte,html,scss}"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^2.0.1",
@@ -21,12 +21,13 @@
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",
     "prettier-plugin-tailwindcss": "^0.2.3",
-    "scss": "^0.2.4",
+    "sass": "^1.58.2",
     "svelte": "^3.55.1",
     "svelte-check": "^3.0.3",
     "tailwindcss": "^3.2.7",

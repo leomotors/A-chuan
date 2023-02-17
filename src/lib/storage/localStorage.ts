@@ -1,6 +1,8 @@
-import type { LocalStorageData } from "$lib/@types";
-import { defaultData } from "./default";
 import { writable } from "svelte/store";
+
+import type { LocalStorageData } from "$lib/@types";
+
+import { defaultData } from "./default";
 const keys = {
   data: "A-chuan-data",
   version: "A-chuan-version",
@@ -29,4 +31,5 @@ export function loadData() {
 
 export function saveData(data: LocalStorageData) {
   localStorage.setItem(keys.data, JSON.stringify(data));
+  console.log("DATA SAVED");
 }
