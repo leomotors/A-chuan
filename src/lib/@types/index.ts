@@ -1,4 +1,21 @@
-export type Subject = {
+export interface Score {
+  name: string;
+  /** `undefined` if not announced */
+  score?: number;
+  fullScore: number;
+  /** defaults to fullScore */
+  actualFullScore?: number;
+  isBonus?: boolean;
+  includeBonusInMaxScore?: boolean;
+}
+
+export type ChildrenScore = Score;
+
+export interface TopLevelScore extends Score {
+  children?: ChildrenScore[];
+}
+
+export type Course = {
   name: string;
   courseId: string;
   grades: Record<string, number>;
@@ -6,18 +23,6 @@ export type Subject = {
   scores: TopLevelScore[];
 };
 
-export interface Score {
-  name: string;
-  /** `undefined` if not announced */
-  score?: number;
-  fullScore: number;
-  weight: number;
-  isBonus?: boolean;
-  includeBonusInMaxScore?: boolean;
-}
-
-export interface TopLevelScore extends Score {
-  children: ChildrenScore[];
-}
-
-export type ChildrenScore = Score;
+export type LocalStorageData = {
+  courses: Course[];
+};
