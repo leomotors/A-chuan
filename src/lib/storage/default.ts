@@ -58,4 +58,9 @@ export const CompEngEss = {
 
 export const defaultData = {
   courses: [CompEngEss],
+  gpax: {
+    totalCredits: 139,
+    overCredits: 0,
+    courses: [],
+  },
 } satisfies LocalStorageData;

@@ -23,6 +23,29 @@ export type Course = {
   scores: TopLevelScore[];
 };
 
+export const Grade = {
+  A: 4,
+  "B+": 3.5,
+  B: 3,
+  "C+": 2.5,
+  C: 2,
+  "D+": 1.5,
+  D: 1,
+  F: 0,
+} as const;
+
+export type GpaxCourse = {
+  name: string;
+  courseId: string;
+  credits: number;
+  outcome: keyof typeof Grade | "W" | "S";
+};
+
 export type LocalStorageData = {
   courses: Course[];
+  gpax: {
+    totalCredits: number;
+    overCredits: number;
+    courses: GpaxCourse[];
+  };
 };
