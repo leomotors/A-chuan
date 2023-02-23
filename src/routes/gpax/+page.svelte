@@ -2,7 +2,7 @@
   import { Grade } from "$lib/@types";
   import EditableSpan from "$lib/components/EditableSpan.svelte";
   import { appData } from "$lib/storage/localStorage";
-  import { r4 } from "$lib/utils";
+  import { r4, r4t4 } from "$lib/utils";
 
   import { computeGpax } from "./computeGpax";
 
@@ -79,12 +79,18 @@
     <p>Gained A-F Credits : {computed.afCredits}</p>
     <p>Gained S/U Credits : {computed.suCredits}</p>
     <br />
-    <p>Current GPAX : {r4(computed.gpGained / computed.afCredits)}</p>
+    <p>Current GPAX : {r4t4(computed.gpGained / computed.afCredits)}</p>
+    <p>
+      Maximum GPAX (at {maxAfCredits} A-F credits) : {r4t4(
+        4 - computed.gpLost / maxAfCredits
+      )}
+    </p>
     <p>Grade Point (Type+) : {computed.gpGained} / {maxAfCredits * 4}</p>
     <p>Grade Point (Type-) : -{computed.gpLost}</p>
     <p>Border 3.9 : {r4(0.1 * maxAfCredits - computed.gpLost)}</p>
     <p>Border 3.8 : {r4(0.2 * maxAfCredits - computed.gpLost)}</p>
-    <p>Border First Honor : {r4(0.4 * maxAfCredits - computed.gpLost)}</p>
+    <p>Border 1st Honor : {r4(0.4 * maxAfCredits - computed.gpLost)}</p>
+    <p>Border 2nd Honor : {r4(0.75 * maxAfCredits - computed.gpLost)}</p>
   </div>
 
   <p>Courses</p>
